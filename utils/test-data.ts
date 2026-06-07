@@ -1,0 +1,49 @@
+// Load environment variables
+import * as dotenv from 'dotenv';
+
+dotenv.config();
+
+export const SauceDemoUsers = {
+
+    standard: {
+        username: process.env.SAUCEDEMO_STANDARD_USER || 'standard_user',
+        password: process.env.SAUCEDEMO_PASSWORD || 'secret_sauce'
+    },
+
+    locked: {
+        username: process.env.SAUCEDEMO_STANDARD_USER || 'locked_out_user',
+        password: process.env.SAUCEDEMO_PASSWORD || 'secret_sauce'
+    },
+
+    problem: {
+        username: process.env.SAUCEDEMO_STANDARD_USER || 'problem_user',
+        password: process.env.SAUCEDEMO_PASSWORD || 'secret_sauce'
+    },
+
+    performance: {
+        username: process.env.SAUCEDEMO_STANDARD_USER || 'performance_glitch_user',
+        password: process.env.SAUCEDEMO_PASSWORD || 'secret_sauce'
+    },
+
+    error: {
+        username: process.env.SAUCEDEMO_STANDARD_USER || 'error_user',
+        password: process.env.SAUCEDEMO_PASSWORD || 'secret_sauce'
+    },
+
+    visual: {
+        username: process.env.SAUCEDEMO_STANDARD_USER || 'visual_user',
+        password: process.env.SAUCEDEMO_PASSWORD || 'secret_sauce'
+    }
+};
+
+export const TestURLs = {
+
+    sauceDemo: process.env.BASE_URL || 'https://www.saucedemo.com'
+};
+
+export const APIEndpoints = {
+
+    jsonPlaceholder: process.env.JSONPLACEHOLDER_API || 'https://jsonplaceholder.typicode.com',
+    fakeStoreAPI: process.env.FAKESTOREAPI_URL || 'https://fakestoreapi.com',
+    reqres: process.env.REQRES_API || 'https://reqres.in/api'
+};

@@ -28,7 +28,8 @@ export default defineConfig({
 
     ['html'],
     ['list'],
-    ['json', {outputFile: 'test-result.json'}]
+    ['json', {outputFile: 'test-result.json'}],
+    ['junit', {outputFile: 'results.xml'}]
   ],
 
   // Global test timeout
@@ -42,7 +43,7 @@ export default defineConfig({
   // Shared settings for all projects
   use: {
     // Base URL - change based on which site you're testing
-    baseURL: process.env.BASE_URL || 'https://www.saucedemo.com',
+    baseURL: process.env.BASE_URL,
 
     // Collect trace when retrying the failed test. 
     trace: 'on-first-retry',
@@ -66,8 +67,11 @@ export default defineConfig({
   // Configure projects for major browsers 
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: 'saucedemo-chromium',
+      use: { ...devices['Desktop Chrome'],
+        baseURL: 'https://www.saucedemo.com'
+       },
+       testMatch: /saucedemo.*\.spec.ts/,
     },
 
     {

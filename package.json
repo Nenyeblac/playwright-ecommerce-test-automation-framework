@@ -1,10 +1,7 @@
 {
   "name": "playwright-ecommerce-test-framework",
-
   "version": "1.0.0",
-
   "description": "End-to-End Test Automation Framework using Playwright and TypeScript",
-  
   "scripts": {
     "test": "playwright test",
     "test:headed": "playwright test --headed",
@@ -18,21 +15,23 @@
     "test:parallel": "playwright test --workers=4",
     "test:serial": "playwright test --workers=1",
     "report": "playwright show-report",
-    "codegen": "playwright codegen", 
+    "codegen": "playwright codegen",
     "codegen:saucedemo": "playwright codegen https://www.saucedemo.com",
     "install:browsers": "playwright install"
   },
-
-  "keywords": ["playwright", "testing","Automation", "e2e"],
-
+  "keywords": [
+    "playwright",
+    "testing",
+    "Automation",
+    "e2e"
+  ],
   "author": "Chinenye Iloegbunam",
-
   "license": "MIT",
-
   "type": "commonjs",
-
   "devDependencies": {
+    "@faker-js/faker": "^10.4.0",
     "@playwright/test": "^1.60.0",
-    "@types/node": "^25.9.1"
+    "@types/node": "^25.9.1",
+    "dotenv": "^17.4.2"
   }
 }

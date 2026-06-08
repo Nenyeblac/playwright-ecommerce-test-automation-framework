@@ -1,0 +1,14 @@
+<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="6.990357">
+<testsuite name="saucedemo/login.spec.ts" timestamp="2026-06-08T13:17:47.038Z" hostname="saucedemo-chromium" tests="1" failures="0" skipped="0" time="2.568" errors="0">
+<testcase name="SauceDemo Login Tests › Valid Login Scenarios › should log in with standard user" classname="saucedemo/login.spec.ts" time="2.568">
+</testcase>
+</testsuite>
+<testsuite name="saucedemo/login.spec.ts" timestamp="2026-06-08T13:17:47.038Z" hostname="firefox" tests="1" failures="0" skipped="0" time="3.267" errors="0">
+<testcase name="SauceDemo Login Tests › Valid Login Scenarios › should log in with standard user" classname="saucedemo/login.spec.ts" time="3.267">
+</testcase>
+</testsuite>
+<testsuite name="saucedemo/login.spec.ts" timestamp="2026-06-08T13:17:47.038Z" hostname="webkit" tests="1" failures="0" skipped="0" time="5.52" errors="0">
+<testcase name="SauceDemo Login Tests › Valid Login Scenarios › should log in with standard user" classname="saucedemo/login.spec.ts" time="5.52">
+</testcase>
+</testsuite>
+</testsuites>

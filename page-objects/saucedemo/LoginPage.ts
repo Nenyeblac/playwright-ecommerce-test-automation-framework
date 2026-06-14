@@ -1,7 +1,7 @@
 import {Page, Locator} from '@playwright/test';
 
+// Login Page Object - Represents the SauceDemo login page
 export class LoginPage {
-
     readonly page: Page;
     readonly usernameInput: Locator;
     readonly passWordInput: Locator;
@@ -10,10 +10,9 @@ export class LoginPage {
     readonly errorButton: Locator;
 
     constructor(page: Page) {
-
         this.page = page;
 
-        // Locators based on SauceDemo locator by data test - more stable
+        // Locators based on SauceDemo locator by attribute
         this.usernameInput = page.locator('[data-test="username"]');
         this.passWordInput = page.locator('[data-test="password"]');
         this.loginButton = page.locator('[data-test="login-button"]');

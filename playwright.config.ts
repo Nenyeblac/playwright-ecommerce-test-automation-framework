@@ -61,7 +61,8 @@ export default defineConfig({
     actionTimeout: 10 * 1000, // 10 seconds
 
     // Navigation timeout
-    navigationTimeout: 30 * 1000 //30 seconds
+    navigationTimeout: 30 * 1000, //30 seconds
+    
   },
 
   // Configure projects for major browsers 

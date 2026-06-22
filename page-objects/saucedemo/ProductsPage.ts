@@ -65,6 +65,12 @@ export class ProductsPage {
         return allPrice;
     }
 
+    // Get an item price
+    async getProductPrice(productName: string): Promise<string> {
+        const item = this.page.locator('.inventory_item', {hasText: productName});
+        return await item.locator('.inventory_item_price').textContent() || '';
+    }
+
     // Add product to cart by name
     async addProductToCartByName(productName: string) {
         const product = this.page.locator('.inventory_item', {hasText: productName});
@@ -116,7 +122,7 @@ export class ProductsPage {
 
     // Check if inventory is in cart (button should show "Remove")
     async isProductInCart(productName: string): Promise<boolean> {
-        const product = this.page.locator('.ininventory_item', {hasText: productName});
+        const product = this.page.locator('.inventory_item', {hasText: productName});
         const buttonText = await product.locator('button').textContent();
         return buttonText === 'Remove';
     }

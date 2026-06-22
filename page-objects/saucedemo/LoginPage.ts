@@ -1,4 +1,4 @@
-import {Page, Locator} from '@playwright/test';
+import { Page, Locator } from '@playwright/test';
 
 // Login Page Object - Represents the SauceDemo login page
 export class LoginPage {
@@ -16,7 +16,7 @@ export class LoginPage {
         this.usernameInput = page.locator('[data-test="username"]');
         this.passWordInput = page.locator('[data-test="password"]');
         this.loginButton = page.locator('[data-test="login-button"]');
-        this.errorMessage = page.locator('[data-test="error]');
+        this.errorMessage = page.locator('[data-test="error"]');
         this.errorButton = page.locator('[data-test="error-button"]');
     }
 

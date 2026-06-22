@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 3
+      "actualWorkers": 4
     },
     "preserveOutput": "always",
     "projects": [
@@ -20,7 +20,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 3
+          "actualWorkers": 4
         },
         "id": "saucedemo-chromium",
         "name": "saucedemo-chromium",
@@ -36,7 +36,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 3
+          "actualWorkers": 4
         },
         "id": "firefox",
         "name": "firefox",
@@ -52,7 +52,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 3
+          "actualWorkers": 4
         },
         "id": "webkit",
         "name": "webkit",
@@ -101,27 +101,27 @@
   },
   "suites": [
     {
-      "title": "saucedemo/login.spec.ts",
-      "file": "saucedemo/login.spec.ts",
+      "title": "saucedemo/products.spec.ts",
+      "file": "saucedemo/products.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "SauceDemo Login Tests",
-          "file": "saucedemo/login.spec.ts",
-          "line": 4,
+          "title": "Saucedemo Products Tests",
+          "file": "saucedemo/products.spec.ts",
+          "line": 5,
           "column": 6,
           "specs": [],
           "suites": [
             {
-              "title": "Valid Login Scenarios",
-              "file": "saucedemo/login.spec.ts",
-              "line": 13,
+              "title": "Product Display Verification",
+              "file": "saucedemo/products.spec.ts",
+              "line": 19,
               "column": 10,
               "specs": [
                 {
-                  "title": "should log in with standard user",
+                  "title": "should display all products",
                   "ok": true,
                   "tags": [],
                   "tests": [
@@ -136,12 +136,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 2568,
+                          "duration": 1164,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-08T13:17:47.329Z",
+                          "startTime": "2026-06-22T05:48:22.987Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -149,13 +149,183 @@
                       "status": "expected"
                     }
                   ],
-                  "id": "87a74ef46e8bd881bda8-d7b1cbd8915fa98b522a",
-                  "file": "saucedemo/login.spec.ts",
-                  "line": 15,
+                  "id": "e9287920332977f019b2-f51aaa230714a09f2794",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 21,
                   "column": 13
                 },
                 {
-                  "title": "should log in with standard user",
+                  "title": "should have correct product count",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 1183,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:22.958Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-0f2d51c94ef13d24a6f0",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 27,
+                  "column": 13
+                },
+                {
+                  "title": "should display page title",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 1161,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:22.964Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-6e15709ed8afa6b4b0e5",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 33,
+                  "column": 13
+                },
+                {
+                  "title": "should have visible product container",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 1172,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:22.976Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-e9da86d20961728c1898",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 38,
+                  "column": 13
+                },
+                {
+                  "title": "should display all product names",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 706,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:24.707Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-443d68c4a4807583560a",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 42,
+                  "column": 13
+                },
+                {
+                  "title": "should display all product prices",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 684,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:24.708Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-43eb29c3b595b5f51b01",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 48,
+                  "column": 13
+                },
+                {
+                  "title": "should display all products",
                   "ok": true,
                   "tags": [],
                   "tests": [
@@ -167,15 +337,15 @@
                       "projectName": "firefox",
                       "results": [
                         {
-                          "workerIndex": 1,
-                          "parallelIndex": 1,
+                          "workerIndex": 4,
+                          "parallelIndex": 3,
                           "status": "passed",
-                          "duration": 3267,
+                          "duration": 1541,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-08T13:17:47.346Z",
+                          "startTime": "2026-06-22T05:48:30.035Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -183,13 +353,183 @@
                       "status": "expected"
                     }
                   ],
-                  "id": "87a74ef46e8bd881bda8-b5642de0c88605e6f0d6",
-                  "file": "saucedemo/login.spec.ts",
-                  "line": 15,
+                  "id": "e9287920332977f019b2-189c65f23897d8a2384a",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 21,
                   "column": 13
                 },
                 {
-                  "title": "should log in with standard user",
+                  "title": "should have correct product count",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [
+                        {
+                          "workerIndex": 5,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 1983,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:30.035Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-2b73478544261ff661b3",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 27,
+                  "column": 13
+                },
+                {
+                  "title": "should display page title",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [
+                        {
+                          "workerIndex": 6,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1598,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:30.036Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-a0ec94fa66ebbb04e600",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 33,
+                  "column": 13
+                },
+                {
+                  "title": "should have visible product container",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [
+                        {
+                          "workerIndex": 7,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 2103,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:30.733Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-4bb2313257c47acb59e9",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 38,
+                  "column": 13
+                },
+                {
+                  "title": "should display all product names",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 1056,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:34.396Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-3f974fdc0f58e3e8219f",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 42,
+                  "column": 13
+                },
+                {
+                  "title": "should display all product prices",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [
+                        {
+                          "workerIndex": 6,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 866,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:34.768Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-ed8306048a195329ade0",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 48,
+                  "column": 13
+                },
+                {
+                  "title": "should display all products",
                   "ok": true,
                   "tags": [],
                   "tests": [
@@ -201,15 +541,15 @@
                       "projectName": "webkit",
                       "results": [
                         {
-                          "workerIndex": 2,
-                          "parallelIndex": 2,
+                          "workerIndex": 8,
+                          "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 5520,
+                          "duration": 2899,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-08T13:17:47.345Z",
+                          "startTime": "2026-06-22T05:48:42.004Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -217,9 +557,2063 @@
                       "status": "expected"
                     }
                   ],
-                  "id": "87a74ef46e8bd881bda8-bafd39ff74140ed04e18",
-                  "file": "saucedemo/login.spec.ts",
-                  "line": 15,
+                  "id": "e9287920332977f019b2-7e3f54b5a42398ea7a58",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 21,
+                  "column": 13
+                },
+                {
+                  "title": "should have correct product count",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [
+                        {
+                          "workerIndex": 9,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 2424,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:42.085Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-790bc5099b717de974d8",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 27,
+                  "column": 13
+                },
+                {
+                  "title": "should display page title",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [
+                        {
+                          "workerIndex": 10,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 3253,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:42.201Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-a7b8cd3f3aebd40f6a75",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 33,
+                  "column": 13
+                },
+                {
+                  "title": "should have visible product container",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [
+                        {
+                          "workerIndex": 11,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 1622,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:43.042Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-21c2c5bc1ebf6b226446",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 38,
+                  "column": 13
+                },
+                {
+                  "title": "should display all product names",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [
+                        {
+                          "workerIndex": 11,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 1059,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:46.548Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-0723dc6120d6433a383b",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 42,
+                  "column": 13
+                },
+                {
+                  "title": "should display all product prices",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [
+                        {
+                          "workerIndex": 9,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 1011,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:47.365Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-8253fe855a6f1d0d64a6",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 48,
+                  "column": 13
+                }
+              ]
+            },
+            {
+              "title": "Sorting Functionality",
+              "file": "saucedemo/products.spec.ts",
+              "line": 59,
+              "column": 10,
+              "specs": [
+                {
+                  "title": "should have default sort as A to Z",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 671,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:24.727Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-bf48268279e1d37651d0",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 61,
+                  "column": 13
+                },
+                {
+                  "title": "should sort products from A to Z",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 2236,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:24.734Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-cfaab4429d77544609ba",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 67,
+                  "column": 13
+                },
+                {
+                  "title": "should sort products from Z to A",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2205,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:25.411Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-da41873e231a58058624",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 74,
+                  "column": 13
+                },
+                {
+                  "title": "should sort price from low to high",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 2037,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:25.416Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-631000a67d20e230c455",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 81,
+                  "column": 13
+                },
+                {
+                  "title": "should sort price from high to low",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 2183,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:25.431Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-5ac368036817264db1c6",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 86,
+                  "column": 13
+                },
+                {
+                  "title": "should have default sort as A to Z",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 990,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:35.497Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-6139486e6e71259c10f7",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 61,
+                  "column": 13
+                },
+                {
+                  "title": "should sort products from A to Z",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [
+                        {
+                          "workerIndex": 5,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 2370,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:35.556Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-95c5a200f5e3389e9857",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 67,
+                  "column": 13
+                },
+                {
+                  "title": "should sort products from Z to A",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [
+                        {
+                          "workerIndex": 6,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2508,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:35.660Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-6ae5588acbdf5a8c31c3",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 74,
+                  "column": 13
+                },
+                {
+                  "title": "should sort price from low to high",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [
+                        {
+                          "workerIndex": 7,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 2481,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:36.194Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-f1d047ee254c69728800",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 81,
+                  "column": 13
+                },
+                {
+                  "title": "should sort price from high to low",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 2152,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:36.545Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-8ede6de3709461e4dc7d",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 86,
+                  "column": 13
+                },
+                {
+                  "title": "should have default sort as A to Z",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [
+                        {
+                          "workerIndex": 11,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 943,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:47.637Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-051cc5cbc129635d5f7a",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 61,
+                  "column": 13
+                },
+                {
+                  "title": "should sort products from A to Z",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [
+                        {
+                          "workerIndex": 8,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2370,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:47.825Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-37a359cb305fe9dc0473",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 67,
+                  "column": 13
+                },
+                {
+                  "title": "should sort products from Z to A",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [
+                        {
+                          "workerIndex": 10,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 2280,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:48.191Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-fece32c0b148f22af45d",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 74,
+                  "column": 13
+                },
+                {
+                  "title": "should sort price from low to high",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [
+                        {
+                          "workerIndex": 9,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 2509,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:48.406Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-c05160f89ad1c7827c16",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 81,
+                  "column": 13
+                },
+                {
+                  "title": "should sort price from high to low",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [
+                        {
+                          "workerIndex": 11,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 2396,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:48.605Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-e9fa686e1e373ca1845e",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 86,
+                  "column": 13
+                }
+              ]
+            },
+            {
+              "title": "Add to Cart Operations",
+              "file": "saucedemo/products.spec.ts",
+              "line": 95,
+              "column": 10,
+              "specs": [
+                {
+                  "title": "should add single item to cart",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 487,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:26.981Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-9d62b1902e868849d9cd",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 97,
+                  "column": 13
+                },
+                {
+                  "title": "should add multiple items to cart",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 728,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:27.466Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-e5d4da4e02c80cd644b7",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 103,
+                  "column": 13
+                },
+                {
+                  "title": "should add item to cart by index",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 680,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:27.483Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-58c535c6fae055418f88",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 110,
+                  "column": 13
+                },
+                {
+                  "title": "should change button to Remove after adding item",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 629,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:27.625Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-769e947d22a59b7e4189",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 117,
+                  "column": 13
+                },
+                {
+                  "title": "should update cart badge when item is added to cart",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 649,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:27.627Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-b111980425f54a8dc46d",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 123,
+                  "column": 13
+                },
+                {
+                  "title": "should add single item to cart",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [
+                        {
+                          "workerIndex": 5,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 757,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:37.952Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-cf8e665056e3b6f30e54",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 97,
+                  "column": 13
+                },
+                {
+                  "title": "should add multiple items to cart",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [
+                        {
+                          "workerIndex": 6,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 809,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:38.183Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-f9d5e95fcce8d3b9552b",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 103,
+                  "column": 13
+                },
+                {
+                  "title": "should add item to cart by index",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [
+                        {
+                          "workerIndex": 7,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 981,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:38.701Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-8cd96619f564e04c0684",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 110,
+                  "column": 13
+                },
+                {
+                  "title": "should change button to Remove after adding item",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 905,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:38.719Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-187378739f8252ad2f6c",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 117,
+                  "column": 13
+                },
+                {
+                  "title": "should update cart badge when item is added to cart",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [
+                        {
+                          "workerIndex": 5,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 886,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:38.737Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-a08333410ad5bc0214c8",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 123,
+                  "column": 13
+                },
+                {
+                  "title": "should add single item to cart",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [
+                        {
+                          "workerIndex": 8,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 889,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:50.217Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-51bbaf2836c7418523b9",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 97,
+                  "column": 13
+                },
+                {
+                  "title": "should add multiple items to cart",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [
+                        {
+                          "workerIndex": 10,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 983,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:50.489Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-37c81c7188f77ea7d7f8",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 103,
+                  "column": 13
+                },
+                {
+                  "title": "should add item to cart by index",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [
+                        {
+                          "workerIndex": 9,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 1144,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:50.940Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-7ff7aa5b9ecf6db32055",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 110,
+                  "column": 13
+                },
+                {
+                  "title": "should change button to Remove after adding item",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [
+                        {
+                          "workerIndex": 11,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 1129,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:51.025Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-7d2811a3ad48b7b8906e",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 117,
+                  "column": 13
+                },
+                {
+                  "title": "should update cart badge when item is added to cart",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [
+                        {
+                          "workerIndex": 8,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1205,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:51.137Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-6b73e648193ee5e9c7af",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 123,
+                  "column": 13
+                }
+              ]
+            },
+            {
+              "title": "Remove from Cart operations",
+              "file": "saucedemo/products.spec.ts",
+              "line": 137,
+              "column": 10,
+              "specs": [
+                {
+                  "title": "should remove single product from cart",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 681,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:28.177Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-53bfc0110547c5997daf",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 139,
+                  "column": 13
+                },
+                {
+                  "title": "should decrement cart badge when removing",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 701,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:28.219Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-a89072c86a756f18c846",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 148,
+                  "column": 13
+                },
+                {
+                  "title": "should remove single product from cart",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [
+                        {
+                          "workerIndex": 6,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1127,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:39.008Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-9d7c087fb0a15875d5db",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 139,
+                  "column": 13
+                },
+                {
+                  "title": "should decrement cart badge when removing",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [
+                        {
+                          "workerIndex": 5,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 1069,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:39.642Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-54c2070d3e837de771fd",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 148,
+                  "column": 13
+                },
+                {
+                  "title": "should remove single product from cart",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [
+                        {
+                          "workerIndex": 10,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 1134,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:51.488Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-7609e08b11a83063c9c2",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 139,
+                  "column": 13
+                },
+                {
+                  "title": "should decrement cart badge when removing",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [
+                        {
+                          "workerIndex": 9,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 1416,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:52.147Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-f1e3ea53ac2395aad317",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 148,
+                  "column": 13
+                }
+              ]
+            },
+            {
+              "title": "Product Navigation",
+              "file": "saucedemo/products.spec.ts",
+              "line": 164,
+              "column": 10,
+              "specs": [
+                {
+                  "title": "should navigate to product detail",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 590,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:28.262Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-90c6b3cc52c5f31a45fd",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 166,
+                  "column": 13
+                },
+                {
+                  "title": "should navigate to cart",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 576,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:28.286Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-bec598bc56d5ad9bd60a",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 171,
+                  "column": 13
+                },
+                {
+                  "title": "should navigate to product detail",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 883,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:39.645Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-fad0375329c46b412c5b",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 166,
+                  "column": 13
+                },
+                {
+                  "title": "should navigate to cart",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [
+                        {
+                          "workerIndex": 7,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 892,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:39.759Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-a100da12c9929618f791",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 171,
+                  "column": 13
+                },
+                {
+                  "title": "should navigate to product detail",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [
+                        {
+                          "workerIndex": 11,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 1268,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:52.250Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-ffc73af63caa2bfd385b",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 166,
+                  "column": 13
+                },
+                {
+                  "title": "should navigate to cart",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [
+                        {
+                          "workerIndex": 8,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1202,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:52.375Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-6c14fc94442beb5ef538",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 171,
+                  "column": 13
+                }
+              ]
+            },
+            {
+              "title": "Get Product Information",
+              "file": "saucedemo/products.spec.ts",
+              "line": 179,
+              "column": 10,
+              "specs": [
+                {
+                  "title": "should display product names correctly",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 702,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:28.865Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-77a344ac5a9d4d8ff3ad",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 181,
+                  "column": 13
+                },
+                {
+                  "title": "should display product prices correctly",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 633,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:28.874Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-1ffc24f24c65c7929c5a",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 187,
+                  "column": 13
+                },
+                {
+                  "title": "should have correct product details",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 693,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:28.877Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-19cdeaadcb213ea7a2fa",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 193,
+                  "column": 13
+                },
+                {
+                  "title": "should display product names correctly",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [
+                        {
+                          "workerIndex": 6,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 758,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:40.148Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-5ae71eab12a99d85dbf4",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 181,
+                  "column": 13
+                },
+                {
+                  "title": "should display product prices correctly",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 923,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:40.542Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-c15c1fdd75a607012082",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 187,
+                  "column": 13
+                },
+                {
+                  "title": "should have correct product details",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [
+                        {
+                          "workerIndex": 7,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 950,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:40.667Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-1d7bcb4e222e3d5c1dc2",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 193,
+                  "column": 13
+                },
+                {
+                  "title": "should display product names correctly",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [
+                        {
+                          "workerIndex": 10,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 1119,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:52.646Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-10d6de5d9f10ae933a77",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 181,
+                  "column": 13
+                },
+                {
+                  "title": "should display product prices correctly",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [
+                        {
+                          "workerIndex": 11,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 846,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:53.555Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-83d8dba58a6a083b8e80",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 187,
+                  "column": 13
+                },
+                {
+                  "title": "should have correct product details",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [
+                        {
+                          "workerIndex": 9,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 887,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:53.595Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-335fdddaf780945ed405",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 193,
+                  "column": 13
+                }
+              ]
+            },
+            {
+              "title": "User Menu",
+              "file": "saucedemo/products.spec.ts",
+              "line": 210,
+              "column": 10,
+              "specs": [
+                {
+                  "title": "should logout successsfully",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 1529,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:28.933Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-1ec0ac80738c4fb2b262",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 212,
+                  "column": 13
+                },
+                {
+                  "title": "should logout successsfully",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [
+                        {
+                          "workerIndex": 5,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 1873,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:40.729Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-839dec0dd76a0088dd65",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 212,
+                  "column": 13
+                },
+                {
+                  "title": "should logout successsfully",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "webkit",
+                      "projectName": "webkit",
+                      "results": [
+                        {
+                          "workerIndex": 8,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1632,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-22T05:48:53.602Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e9287920332977f019b2-407aef25da2868b61358",
+                  "file": "saucedemo/products.spec.ts",
+                  "line": 212,
                   "column": 13
                 }
               ]
@@ -231,9 +2625,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-08T13:17:47.011Z",
-    "duration": 6990.357,
-    "expected": 3,
+    "startTime": "2026-06-22T05:48:22.622Z",
+    "duration": 32711.882,
+    "expected": 72,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

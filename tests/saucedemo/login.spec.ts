@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../../page-objects/saucedemo/LoginPage';
 import { ProductsPage } from '../../page-objects/saucedemo/ProductsPage';
+import { SauceDemoUsers } from '../../utils/env-test-data';
 
 test.describe('SauceDemo Login Tests', () => {
     let loginPage: LoginPage;
@@ -18,31 +19,43 @@ test.describe('SauceDemo Login Tests', () => {
     test.describe('Valid Login Scenarios', () => {
 
         test('should log in with standard user', async({page}) => {
-            await loginPage.login('standard_user', 'secret_sauce');
+            await loginPage.login(
+                SauceDemoUsers.Valid_Users.standard.username, 
+                SauceDemoUsers.Valid_Users.standard.password);
             await expect(page).toHaveURL(/.*inventory.html/);
             await expect(productsPage.pageTitle).toHaveText('Products');
         });
 
         test('should login with performance glitch user', async({page}) => {
-            await loginPage.login('performance_glitch_user', 'secret_sauce');
+            await loginPage.login(
+                SauceDemoUsers.Valid_Users.performance.username, 
+                SauceDemoUsers.Valid_Users.performance.password);
             await expect(page).toHaveURL(/.*inventory.html/);
             await expect(productsPage.pageTitle).toHaveText('Products');
         });
 
         test('should login with problem user', async({page}) => {
-            await loginPage.login('problem_user', 'secret_sauce');
+            await loginPage.login(
+                SauceDemoUsers.Valid_Users.problem.username,
+                SauceDemoUsers.Valid_Users.problem.password
+            );
             await expect(page).toHaveURL(/.*inventory.html/);
             await expect(productsPage.pageTitle).toHaveText('Products');
         });
 
         test('should login with visual user', async({page}) => {
-            await loginPage.login('visual_user', 'secret_sauce');
+            await loginPage.login(
+                SauceDemoUsers.Valid_Users.visual.username, 
+                SauceDemoUsers.Valid_Users.visual.password);
             await expect(page).toHaveURL(/.*inventory.html/);
             await expect(productsPage.pageTitle).toHaveText('Products');
         });
 
         test('should login with error user', async({page}) => {
-            await loginPage.login('error_user', 'secret_sauce');
+            await loginPage.login(
+                SauceDemoUsers.Valid_Users.error.username,
+                SauceDemoUsers.Valid_Users.error.password
+            );
             await expect(page).toHaveURL(/.*inventory.html/);
             await expect(productsPage.pageTitle).toHaveText('Products');
         });
@@ -53,20 +66,28 @@ test.describe('SauceDemo Login Tests', () => {
     test.describe('Invalid Credentials Handling', () => {
 
         test('should show error for locked out user', async() => {
-            await loginPage.login('locked_out_user', 'secret_sauce');
+            await loginPage.login(
+                SauceDemoUsers.Invalid_Users.locked.username, 
+                SauceDemoUsers.Invalid_Users.locked.password);
             await expect(loginPage.errorMessage).toBeVisible();
             await expect(loginPage.errorMessage).toContainText('Sorry, this user has been locked out');
         });
 
         test('should show error for invalid username', async() => {
-            await loginPage.login('invalid_user', 'secret_sauce');
+            await loginPage.login(
+                SauceDemoUsers.Invalid_Users.invalid_username.username,
+                SauceDemoUsers.Invalid_Users.invalid_username.password
+            );
             await expect(loginPage.errorMessage).toBeVisible();
             const errorText = await loginPage.getErrorMessage();
             expect(errorText).toContain('Username and password do not match');
         });
 
         test('should show error for invalid password', async() => {
-            await loginPage.login('standard_user', 'wrong_password');
+            await loginPage.login(
+                SauceDemoUsers.Invalid_Users.invalid_password.username,
+                SauceDemoUsers.Invalid_Users.invalid_password.password
+            );
             await expect(loginPage.errorMessage).toBeVisible;
             const errorText = await loginPage.getErrorMessage();
             expect(errorText).toContain('Username and password do not match')
@@ -114,14 +135,20 @@ test.describe('SauceDemo Login Tests', () => {
     test.describe('Empty Field Validation', () => {
 
         test('should show error for empty username', async() => {
-            await loginPage.login('', 'secret_sauce');
+            await loginPage.login(
+                SauceDemoUsers.Invalid_Users.empty_username.username,
+                SauceDemoUsers.Invalid_Users.empty_username.password
+            );
             await expect(loginPage.errorMessage).toBeVisible();
             const errorText = await loginPage.getErrorMessage();
             expect(errorText).toContain('Username is required');
         });
 
         test('should show error for empty password', async() => {
-            await loginPage.login('standard_user', '');
+            await loginPage.login(
+                SauceDemoUsers.Invalid_Users.empty_password.username,
+                SauceDemoUsers.Invalid_Users.empty_password.password
+            );
             await expect(loginPage.errorMessage).toBeVisible();
             const errorText = await loginPage.getErrorMessage();
             expect(errorText).toContain('Password is required');

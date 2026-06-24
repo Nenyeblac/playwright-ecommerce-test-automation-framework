@@ -1,6 +1,9 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../../page-objects/saucedemo/LoginPage';
 import { ProductsPage } from '../../page-objects/saucedemo/ProductsPage';
+import { SauceDemoUsers } from '../../utils/env-test-data';
+import { TestData } from '../../utils/test-data';
+import { TestURLs } from '../../utils/env-test-data';
 
 test.describe('Saucedemo Products Tests', () => {
 
@@ -12,7 +15,10 @@ test.describe('Saucedemo Products Tests', () => {
         productsPage = new ProductsPage(page);
 
         await loginPage.goto();
-        await loginPage.login('standard_user', 'secret_sauce')
+        await loginPage.login(
+            SauceDemoUsers.Valid_Users.standard.username,
+            SauceDemoUsers.Valid_Users.standard.password
+        );
     });
 
     //Product Display Verification
@@ -81,12 +87,12 @@ test.describe('Saucedemo Products Tests', () => {
         test('should sort price from low to high', async() => {
             await productsPage.sortBy('lohi');
             const names = await productsPage.getAllProductNames();
-            expect(names[0]).toBe('Sauce Labs Onesie');
+            expect(names[0]).toBe(TestData.PRODUCTS.ONESIE.name);
         });
         test('should sort price from high to low', async() => {
             await productsPage.sortBy('hilo');
             const names = await productsPage.getAllProductNames();
-            expect(names[0]).toBe('Sauce Labs Fleece Jacket');
+            expect(names[0]).toBe(TestData.PRODUCTS.FLEECE_JACKET.name);
         });
 
     });
@@ -95,14 +101,14 @@ test.describe('Saucedemo Products Tests', () => {
     test.describe('Add to Cart Operations', () => {
 
         test('should add single item to cart', async() => {
-            await productsPage.addProductToCartByName('Sauce Labs Backpack');
+            await productsPage.addProductToCartByName(TestData.PRODUCTS.BACKPACK.name);
             const cartCount = await productsPage.getCartItemCount();
             expect(cartCount).toBe(1);
         });
 
         test('should add multiple items to cart', async() => {
-            await productsPage.addProductToCartByName('Sauce Labs Backpack');
-            await productsPage.addProductToCartByName('Sauce Labs Bike Light');
+            await productsPage.addProductToCartByName(TestData.PRODUCTS.BACKPACK.name);
+            await productsPage.addProductToCartByName(TestData.PRODUCTS.BIKE_LIGHT.name);
             const cartCount = await productsPage.getCartItemCount();
             expect(cartCount).toBe(2);
         });
@@ -115,8 +121,8 @@ test.describe('Saucedemo Products Tests', () => {
         });
 
         test('should change button to Remove after adding item', async() => {
-            await productsPage.addProductToCartByName('Sauce Labs Backpack');
-            const isInCart = await productsPage.isProductInCart('Sauce Labs Backpack');
+            await productsPage.addProductToCartByName(TestData.PRODUCTS.BACKPACK.name);
+            const isInCart = await productsPage.isProductInCart(TestData.PRODUCTS.BACKPACK.name);
             expect(isInCart).toBeTruthy();
         });
 
@@ -124,7 +130,7 @@ test.describe('Saucedemo Products Tests', () => {
             let cartCount = await productsPage.getCartItemCount();
             expect(cartCount).toBe(0);
 
-            await productsPage.addProductToCartByName('Sauce Labs Backpack');
+            await productsPage.addProductToCartByName(TestData.PRODUCTS.BACKPACK.name);
             cartCount = await productsPage.getCartItemCount();
             expect(cartCount).toBe(1);
         });
@@ -137,8 +143,8 @@ test.describe('Saucedemo Products Tests', () => {
     test.describe('Remove from Cart operations', () => {
 
         test('should remove single product from cart', async() => {
-            await productsPage.addProductToCartByName('Sauce Labs Backpack');
-            await productsPage.removeProductFromCart('Sauce Labs Backpack');
+            await productsPage.addProductToCartByName(TestData.PRODUCTS.BACKPACK.name);
+            await productsPage.removeProductFromCart(TestData.PRODUCTS.BACKPACK.name);
             
             const cartCount = await productsPage.getCartItemCount();
             expect(cartCount).toBe(0);
@@ -146,13 +152,13 @@ test.describe('Saucedemo Products Tests', () => {
         });
 
         test('should decrement cart badge when removing', async() => {
-            await productsPage.addProductToCartByName('Sauce Labs Backpack');
-            await productsPage.addProductToCartByName('Sauce Labs Bike Light');
+            await productsPage.addProductToCartByName(TestData.PRODUCTS.BACKPACK.name);
+            await productsPage.addProductToCartByName(TestData.PRODUCTS.BIKE_LIGHT.name);
 
             let cartCount = await productsPage.getCartItemCount();
             expect(cartCount).toBe(2);
 
-            await productsPage.removeProductFromCart('Sauce Labs Backpack');
+            await productsPage.removeProductFromCart(TestData.PRODUCTS.BACKPACK.name);
             cartCount = await productsPage.getCartItemCount();
             expect(cartCount).toBe(1);
 
@@ -180,12 +186,12 @@ test.describe('Saucedemo Products Tests', () => {
 
         test('should display product names correctly', async() => {
             const names = await productsPage.getAllProductNames();
-            expect(names).toContain('Sauce Labs Backpack');
-            expect(names).toContain('Sauce Labs Bike Light');
+            expect(names).toContain(TestData.PRODUCTS.BACKPACK.name);
+            expect(names).toContain(TestData.PRODUCTS.BIKE_LIGHT.name);
         });
 
         test('should display product prices correctly', async({page}) => {
-            const price = await productsPage.getProductPrice('Sauce Labs Backpack');
+            const price = await productsPage.getProductPrice(TestData.PRODUCTS.BACKPACK.name);
             expect(price).toContain('$');
             expect(parseFloat(price.replace('$', ''))).toBeGreaterThan(0);
         });
@@ -211,7 +217,7 @@ test.describe('Saucedemo Products Tests', () => {
 
         test('should logout successsfully', async({page}) => {
             await productsPage.logout(); 
-            await expect(page).toHaveURL('https://www.saucedemo.com/');
+            await expect(page).toHaveURL(TestURLs.sauceDemo);
         })
     })
 

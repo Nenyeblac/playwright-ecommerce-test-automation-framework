@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 1
+      "actualWorkers": 4
     },
     "preserveOutput": "always",
     "projects": [
@@ -20,7 +20,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 4
         },
         "id": "saucedemo-chromium",
         "name": "saucedemo-chromium",
@@ -36,7 +36,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 4
         },
         "id": "firefox",
         "name": "firefox",
@@ -52,7 +52,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 4
         },
         "id": "webkit",
         "name": "webkit",
@@ -101,27 +101,27 @@
   },
   "suites": [
     {
-      "title": "saucedemo/products.spec.ts",
-      "file": "saucedemo/products.spec.ts",
+      "title": "saucedemo/carts.spec.ts",
+      "file": "saucedemo/carts.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Saucedemo Products Tests",
-          "file": "saucedemo/products.spec.ts",
-          "line": 8,
+          "title": "SauceDemo Cart Tests",
+          "file": "saucedemo/carts.spec.ts",
+          "line": 9,
           "column": 6,
           "specs": [],
           "suites": [
             {
-              "title": "User Menu",
-              "file": "saucedemo/products.spec.ts",
-              "line": 216,
+              "title": "Adding items to cart",
+              "file": "saucedemo/carts.spec.ts",
+              "line": 29,
               "column": 10,
               "specs": [
                 {
-                  "title": "should logout successsfully",
+                  "title": "should add single item",
                   "ok": true,
                   "tags": [],
                   "tests": [
@@ -133,15 +133,15 @@
                       "projectName": "saucedemo-chromium",
                       "results": [
                         {
-                          "workerIndex": 17,
+                          "workerIndex": 2,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 2063,
+                          "duration": 950,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-24T05:25:46.524Z",
+                          "startTime": "2026-07-21T20:41:32.067Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -149,9 +149,821 @@
                       "status": "expected"
                     }
                   ],
-                  "id": "e9287920332977f019b2-1ec0ac80738c4fb2b262",
-                  "file": "saucedemo/products.spec.ts",
-                  "line": 218,
+                  "id": "f5327b8f58c73f5dcc8c-c12b22d419a7d6491dc5",
+                  "file": "saucedemo/carts.spec.ts",
+                  "line": 31,
+                  "column": 13
+                },
+                {
+                  "title": "should add multiple items",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 989,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-21T20:41:32.083Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "f5327b8f58c73f5dcc8c-bd55383a6a14d3d7c273",
+                  "file": "saucedemo/carts.spec.ts",
+                  "line": 38,
+                  "column": 13
+                },
+                {
+                  "title": "should add all items",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 1195,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-21T20:41:32.080Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "f5327b8f58c73f5dcc8c-b43bbff7db76fc75d2f4",
+                  "file": "saucedemo/carts.spec.ts",
+                  "line": 46,
+                  "column": 13
+                },
+                {
+                  "title": "should show checkout button when item is added to cart",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 5,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 949,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-21T20:41:32.104Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "f5327b8f58c73f5dcc8c-fb6488c67ddf9f526d32",
+                  "file": "saucedemo/carts.spec.ts",
+                  "line": 56,
+                  "column": 13
+                }
+              ]
+            },
+            {
+              "title": "Remove Items From Cart",
+              "file": "saucedemo/carts.spec.ts",
+              "line": 65,
+              "column": 10,
+              "specs": [
+                {
+                  "title": "should remove cart item from products page",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 618,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-21T20:41:33.436Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "f5327b8f58c73f5dcc8c-093d3288bdd814538d1f",
+                  "file": "saucedemo/carts.spec.ts",
+                  "line": 67,
+                  "column": 13
+                },
+                {
+                  "title": "should remove cart item from cart page",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 5,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 591,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-21T20:41:33.436Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "f5327b8f58c73f5dcc8c-117f764f58a2e84e4cf8",
+                  "file": "saucedemo/carts.spec.ts",
+                  "line": 74,
+                  "column": 13
+                },
+                {
+                  "title": "should remove multiple cart items from cart page",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 606,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-21T20:41:33.468Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "f5327b8f58c73f5dcc8c-78394fca79f8796f45cb",
+                  "file": "saucedemo/carts.spec.ts",
+                  "line": 82,
+                  "column": 13
+                },
+                {
+                  "title": "should remove all cart items from cart page",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 625,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-21T20:41:33.674Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "f5327b8f58c73f5dcc8c-09b2e3853474fbe2188a",
+                  "file": "saucedemo/carts.spec.ts",
+                  "line": 95,
+                  "column": 13
+                }
+              ]
+            },
+            {
+              "title": "Navigating the Cart",
+              "file": "saucedemo/carts.spec.ts",
+              "line": 110,
+              "column": 10,
+              "specs": [
+                {
+                  "title": "should navigate to cart page from product page",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 5,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 470,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-21T20:41:34.037Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "f5327b8f58c73f5dcc8c-06fceb937d0dee5df1b0",
+                  "file": "saucedemo/carts.spec.ts",
+                  "line": 112,
+                  "column": 13
+                },
+                {
+                  "title": "should continue shopping from cart",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 572,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-21T20:41:34.062Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "f5327b8f58c73f5dcc8c-2ca281793195044d9d19",
+                  "file": "saucedemo/carts.spec.ts",
+                  "line": 118,
+                  "column": 13
+                },
+                {
+                  "title": "should navigate back and forth",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 527,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-21T20:41:34.091Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "f5327b8f58c73f5dcc8c-f14817da38404a00da4f",
+                  "file": "saucedemo/carts.spec.ts",
+                  "line": 124,
+                  "column": 13
+                }
+              ]
+            },
+            {
+              "title": "Cart Calculations",
+              "file": "saucedemo/carts.spec.ts",
+              "line": 136,
+              "column": 10,
+              "specs": [
+                {
+                  "title": "should calculate the price of single item",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 552,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-21T20:41:34.311Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "f5327b8f58c73f5dcc8c-7770686d69c8d1207a31",
+                  "file": "saucedemo/carts.spec.ts",
+                  "line": 138,
+                  "column": 13
+                },
+                {
+                  "title": "should calculate multiple items total",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 5,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 550,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-21T20:41:34.520Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "f5327b8f58c73f5dcc8c-ff365d23ee6d4607b175",
+                  "file": "saucedemo/carts.spec.ts",
+                  "line": 146,
+                  "column": 13
+                },
+                {
+                  "title": "should show correct cart badge count",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 602,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-21T20:41:34.626Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "f5327b8f58c73f5dcc8c-467409b6c4139cebcb15",
+                  "file": "saucedemo/carts.spec.ts",
+                  "line": 154,
+                  "column": 13
+                }
+              ]
+            },
+            {
+              "title": "Get Cart Item Details",
+              "file": "saucedemo/carts.spec.ts",
+              "line": 166,
+              "column": 10,
+              "specs": [
+                {
+                  "title": "should diplay cart item details correctly",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 499,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-21T20:41:34.650Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "f5327b8f58c73f5dcc8c-c27706060a33847c6590",
+                  "file": "saucedemo/carts.spec.ts",
+                  "line": 168,
+                  "column": 13
+                },
+                {
+                  "title": "should show product description in cart",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 556,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-21T20:41:34.884Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "f5327b8f58c73f5dcc8c-37908d0fdb65da94b001",
+                  "file": "saucedemo/carts.spec.ts",
+                  "line": 178,
+                  "column": 13
+                }
+              ]
+            },
+            {
+              "title": "Empty Cart Scenarios",
+              "file": "saucedemo/carts.spec.ts",
+              "line": 187,
+              "column": 10,
+              "specs": [
+                {
+                  "title": "should display empty cart correctly",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 5,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 484,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-21T20:41:35.084Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "f5327b8f58c73f5dcc8c-8689ec2250b26a942f85",
+                  "file": "saucedemo/carts.spec.ts",
+                  "line": 189,
+                  "column": 13
+                },
+                {
+                  "title": "should show empty cart after removing all",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 591,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-21T20:41:35.161Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "f5327b8f58c73f5dcc8c-2191dca9c81587ce9ccb",
+                  "file": "saucedemo/carts.spec.ts",
+                  "line": 195,
+                  "column": 13
+                }
+              ]
+            },
+            {
+              "title": "Cart Persistence",
+              "file": "saucedemo/carts.spec.ts",
+              "line": 205,
+              "column": 10,
+              "specs": [
+                {
+                  "title": "should maintain items in the cart across navigation",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 578,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-21T20:41:35.240Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "f5327b8f58c73f5dcc8c-be2e903d6d154c281adb",
+                  "file": "saucedemo/carts.spec.ts",
+                  "line": 207,
+                  "column": 13
+                }
+              ]
+            },
+            {
+              "title": "Verification Methods",
+              "file": "saucedemo/carts.spec.ts",
+              "line": 221,
+              "column": 10,
+              "specs": [
+                {
+                  "title": "should verify product in cart",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 611,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-21T20:41:35.450Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "f5327b8f58c73f5dcc8c-ffa53bc776c8d8783d78",
+                  "file": "saucedemo/carts.spec.ts",
+                  "line": 223,
+                  "column": 13
+                },
+                {
+                  "title": "should verify the content of the cart",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 5,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 523,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-21T20:41:35.577Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "f5327b8f58c73f5dcc8c-b960baa0162ca8cd81b5",
+                  "file": "saucedemo/carts.spec.ts",
+                  "line": 230,
+                  "column": 13
+                }
+              ]
+            },
+            {
+              "title": "Cart Display Details",
+              "file": "saucedemo/carts.spec.ts",
+              "line": 241,
+              "column": 10,
+              "specs": [
+                {
+                  "title": "should display quantity as 1 for each added cart item",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 446,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-21T20:41:35.765Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "f5327b8f58c73f5dcc8c-60ed68dfc98799200ee6",
+                  "file": "saucedemo/carts.spec.ts",
+                  "line": 243,
+                  "column": 13
+                },
+                {
+                  "title": "should display product description",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "saucedemo-chromium",
+                      "projectName": "saucedemo-chromium",
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 466,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-21T20:41:35.827Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "f5327b8f58c73f5dcc8c-7cada46be4bddc17d864",
+                  "file": "saucedemo/carts.spec.ts",
+                  "line": 250,
                   "column": 13
                 }
               ]
@@ -163,9 +975,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-24T05:25:46.033Z",
-    "duration": 3375.1590000018477,
-    "expected": 1,
+    "startTime": "2026-07-21T20:41:31.451Z",
+    "duration": 4876.393999999855,
+    "expected": 23,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

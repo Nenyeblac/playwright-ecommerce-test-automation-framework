@@ -49,11 +49,11 @@ export class ProductsPage {
     // Get all product names
     async getAllProductNames(): Promise<string[]> {
         const items = await this.inventoryItems.all();
-        const names: string [] = [];
+        const names: string[] = [];
 
-        for(const item of items) {
+        for (const item of items) {
             const name = await item.locator('.inventory_item_name').textContent();
-            if(name) names.push(name);
+            if (name) names.push(name);
         }
         return names;
     }
@@ -67,13 +67,13 @@ export class ProductsPage {
 
     // Get an item price
     async getProductPrice(productName: string): Promise<string> {
-        const item = this.page.locator('.inventory_item', {hasText: productName});
+        const item = this.page.locator('.inventory_item', { hasText: productName });
         return await item.locator('.inventory_item_price').textContent() || '';
     }
 
     // Add product to cart by name
     async addProductToCartByName(productName: string) {
-        const product = this.page.locator('.inventory_item', {hasText: productName});
+        const product = this.page.locator('.inventory_item', { hasText: productName });
         await product.locator('button:has-text("Add to cart")').click();
     }
 
@@ -84,14 +84,14 @@ export class ProductsPage {
 
     // Remove product from cart by name
     async removeProductFromCart(productName: string) {
-        const product = this.page.locator('.inventory_item', {hasText: productName});
+        const product = this.page.locator('.inventory_item', { hasText: productName });
         await product.locator('button:has-text("Remove")').click();
     }
 
     // Shopping cart item count
     async getCartItemCount(): Promise<number> {
         const isVisible = await this.shoppingCartBadge.isVisible();
-        if(!isVisible) return 0;
+        if (!isVisible) return 0;
 
         const badgeText = await this.shoppingCartBadge.textContent();
         return parseInt(badgeText || '0');
@@ -103,33 +103,33 @@ export class ProductsPage {
     }
 
     // Sort products
-    async sortBy (option: 'az' | 'za' | 'lohi' | 'hilo') {
-        await this.sortDropdown.waitFor({state: 'visible', timeout: 1000});
+    async sortBy(option: 'az' | 'za' | 'lohi' | 'hilo') {
+        await this.sortDropdown.waitFor({ state: 'visible', timeout: 1000 });
         await this.sortDropdown.selectOption(option);
         await this.page.waitForTimeout(1500);
     }
 
     // Get product details by name
-    async getProductDetails(productName: string): Promise<{name: string, price: number, description: string}> {
-        const product = this.page.locator('.inventory_item', {hasText: productName});
+    async getProductDetails(productName: string): Promise<{ name: string, price: number, description: string }> {
+        const product = this.page.locator('.inventory_item', { hasText: productName });
         const name = await product.locator('.inventory_item_name').textContent() || '';
         const priceText = await product.locator('.inventory_item_price').textContent() || '$0';
         const price = parseFloat(priceText.replace('$', ''));
         const description = await product.locator('.inventory_item_desc').textContent() || '';
 
-        return {name, price, description};
+        return { name, price, description };
     }
 
     // Check if inventory is in cart (button should show "Remove")
     async isProductInCart(productName: string): Promise<boolean> {
-        const product = this.page.locator('.inventory_item', {hasText: productName});
+        const product = this.page.locator('.inventory_item', { hasText: productName });
         const buttonText = await product.locator('button').textContent();
         return buttonText === 'Remove';
     }
 
     // Click on product name to view details
     async clickProductName(productName: string) {
-        await this.page.locator('inventory_item_name', {hasText: productName}).click();
+        await this.page.locator('inventory_item_name', { hasText: productName }).click();
     }
 
     // Logout
@@ -140,8 +140,8 @@ export class ProductsPage {
 
     // Add multiple products to cart by name
     async addMultipleProducts(productNames: string[]) {
-        for(const name of productNames) {
-            this.addProductToCartByName(name);
+        for (const name of productNames) {
+            await this.addProductToCartByName(name);
         }
     }
 
@@ -166,14 +166,14 @@ export class ProductsPage {
     // Check if products are sorted by price (low to high)
     async areProductsSortedLowToHi(): Promise<boolean> {
         const prices = await this.getAllProductPrices();
-        const sorted = [...prices].sort((a,b) => a-b);
+        const sorted = [...prices].sort((a, b) => a - b);
         return JSON.stringify(prices) === JSON.stringify(sorted);
     }
 
     // Check if products are sorted by price (low to high)
     async areProductsSortedHiToLow(): Promise<boolean> {
         const prices = await this.getAllProductPrices();
-        const sorted = [...prices].sort((a,b) => b-a);
+        const sorted = [...prices].sort((a, b) => b - a);
         return JSON.stringify(prices) === JSON.stringify(sorted);
     }
 

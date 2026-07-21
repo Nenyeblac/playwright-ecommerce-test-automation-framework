@@ -21,7 +21,7 @@ export class LoginPage {
     }
 
     // Navigate to the login page
-    async goto(){
+    async goto() {
         await this.page.goto('https://www.saucedemo.com/');
     }
 

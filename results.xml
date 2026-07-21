@@ -1,6 +1,50 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="3.375159000001848">
-<testsuite name="saucedemo/products.spec.ts" timestamp="2026-06-24T05:25:46.291Z" hostname="saucedemo-chromium" tests="1" failures="0" skipped="0" time="2.063" errors="0">
-<testcase name="Saucedemo Products Tests › User Menu › should logout successsfully" classname="saucedemo/products.spec.ts" time="2.063">
+<testsuites id="" name="" tests="23" failures="0" skipped="0" errors="0" time="4.876393999999855">
+<testsuite name="saucedemo/carts.spec.ts" timestamp="2026-07-21T20:41:31.729Z" hostname="saucedemo-chromium" tests="23" failures="0" skipped="0" time="14.55" errors="0">
+<testcase name="SauceDemo Cart Tests › Adding items to cart › should add single item" classname="saucedemo/carts.spec.ts" time="0.95">
+</testcase>
+<testcase name="SauceDemo Cart Tests › Adding items to cart › should add multiple items" classname="saucedemo/carts.spec.ts" time="0.989">
+</testcase>
+<testcase name="SauceDemo Cart Tests › Adding items to cart › should add all items" classname="saucedemo/carts.spec.ts" time="1.195">
+</testcase>
+<testcase name="SauceDemo Cart Tests › Adding items to cart › should show checkout button when item is added to cart" classname="saucedemo/carts.spec.ts" time="0.949">
+</testcase>
+<testcase name="SauceDemo Cart Tests › Remove Items From Cart › should remove cart item from products page" classname="saucedemo/carts.spec.ts" time="0.618">
+</testcase>
+<testcase name="SauceDemo Cart Tests › Remove Items From Cart › should remove cart item from cart page" classname="saucedemo/carts.spec.ts" time="0.591">
+</testcase>
+<testcase name="SauceDemo Cart Tests › Remove Items From Cart › should remove multiple cart items from cart page" classname="saucedemo/carts.spec.ts" time="0.606">
+</testcase>
+<testcase name="SauceDemo Cart Tests › Remove Items From Cart › should remove all cart items from cart page" classname="saucedemo/carts.spec.ts" time="0.625">
+</testcase>
+<testcase name="SauceDemo Cart Tests › Navigating the Cart › should navigate to cart page from product page" classname="saucedemo/carts.spec.ts" time="0.47">
+</testcase>
+<testcase name="SauceDemo Cart Tests › Navigating the Cart › should continue shopping from cart" classname="saucedemo/carts.spec.ts" time="0.572">
+</testcase>
+<testcase name="SauceDemo Cart Tests › Navigating the Cart › should navigate back and forth" classname="saucedemo/carts.spec.ts" time="0.527">
+</testcase>
+<testcase name="SauceDemo Cart Tests › Cart Calculations › should calculate the price of single item" classname="saucedemo/carts.spec.ts" time="0.552">
+</testcase>
+<testcase name="SauceDemo Cart Tests › Cart Calculations › should calculate multiple items total" classname="saucedemo/carts.spec.ts" time="0.55">
+</testcase>
+<testcase name="SauceDemo Cart Tests › Cart Calculations › should show correct cart badge count" classname="saucedemo/carts.spec.ts" time="0.602">
+</testcase>
+<testcase name="SauceDemo Cart Tests › Get Cart Item Details › should diplay cart item details correctly" classname="saucedemo/carts.spec.ts" time="0.499">
+</testcase>
+<testcase name="SauceDemo Cart Tests › Get Cart Item Details › should show product description in cart" classname="saucedemo/carts.spec.ts" time="0.556">
+</testcase>
+<testcase name="SauceDemo Cart Tests › Empty Cart Scenarios › should display empty cart correctly" classname="saucedemo/carts.spec.ts" time="0.484">
+</testcase>
+<testcase name="SauceDemo Cart Tests › Empty Cart Scenarios › should show empty cart after removing all" classname="saucedemo/carts.spec.ts" time="0.591">
+</testcase>
+<testcase name="SauceDemo Cart Tests › Cart Persistence › should maintain items in the cart across navigation" classname="saucedemo/carts.spec.ts" time="0.578">
+</testcase>
+<testcase name="SauceDemo Cart Tests › Verification Methods › should verify product in cart" classname="saucedemo/carts.spec.ts" time="0.611">
+</testcase>
+<testcase name="SauceDemo Cart Tests › Verification Methods › should verify the content of the cart" classname="saucedemo/carts.spec.ts" time="0.523">
+</testcase>
+<testcase name="SauceDemo Cart Tests › Cart Display Details › should display quantity as 1 for each added cart item" classname="saucedemo/carts.spec.ts" time="0.446">
+</testcase>
+<testcase name="SauceDemo Cart Tests › Cart Display Details › should display product description" classname="saucedemo/carts.spec.ts" time="0.466">
 </testcase>
 </testsuite>
 </testsuites>

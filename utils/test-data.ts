@@ -90,6 +90,11 @@ export class TestData {
             lastName: 'Doe',
             postCode: '12345'
         },
+        SPECIAL_CHARACTERS: {
+            firstName: 'John-Paul',
+            lastName: "O'Connor",
+            postCode: 'ABC123'
+        },
         MISSING_FIRSTNAME: {
             firstName: '',
             lastName: 'Doe',

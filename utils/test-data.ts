@@ -115,12 +115,12 @@ export class TestData {
     // API test data
     static readonly API_USERS = {
         VALID: {
-            email: 'test@example.com',
-            password: 'testpassword123'
+            username: 'mor_2314',
+            password: '83r5^_'
         },
         INVALID: {
-            email: 'invalid@example.com',
-            password: 'wrongpassword'
+            username: 'invalid_user',
+            password: 'wrong_password'
         },
     };
 

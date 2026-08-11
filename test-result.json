@@ -22,10 +22,28 @@
         "metadata": {
           "actualWorkers": 1
         },
-        "id": "saucedemo-chromium",
-        "name": "saucedemo-chromium",
+        "id": "api",
+        "name": "api",
         "testDir": "/Users/nenyeblac/Desktop/myProjects/playwright-projects/playwright-ecommerce-test-framework/tests",
         "testIgnore": [],
+        "testMatch": [
+          "/.*api.*\\.spec\\.ts/"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/nenyeblac/Desktop/myProjects/playwright-projects/playwright-ecommerce-test-framework/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/nenyeblac/Desktop/myProjects/playwright-projects/playwright-ecommerce-test-framework/tests",
+        "testIgnore": [
+          "/.*api.*\\.spec\\.ts/"
+        ],
         "testMatch": [
           "/saucedemo.*\\.spec.ts/"
         ],
@@ -41,7 +59,9 @@
         "id": "firefox",
         "name": "firefox",
         "testDir": "/Users/nenyeblac/Desktop/myProjects/playwright-projects/playwright-ecommerce-test-framework/tests",
-        "testIgnore": [],
+        "testIgnore": [
+          "/.*api.*\\.spec\\.ts/"
+        ],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
@@ -57,7 +77,9 @@
         "id": "webkit",
         "name": "webkit",
         "testDir": "/Users/nenyeblac/Desktop/myProjects/playwright-projects/playwright-ecommerce-test-framework/tests",
-        "testIgnore": [],
+        "testIgnore": [
+          "/.*api.*\\.spec\\.ts/"
+        ],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
@@ -101,60 +123,61 @@
   },
   "suites": [
     {
-      "title": "saucedemo/checkout.spec.ts",
-      "file": "saucedemo/checkout.spec.ts",
+      "title": "api/fakestoreapi.spec.ts",
+      "file": "api/fakestoreapi.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "SauceDemo Checkout Tests",
-          "file": "saucedemo/checkout.spec.ts",
-          "line": 10,
+          "title": "FakeStoreAPI - User Tests",
+          "file": "api/fakestoreapi.spec.ts",
+          "line": 283,
           "column": 6,
-          "specs": [],
-          "suites": [
+          "specs": [
             {
-              "title": "End-to-End Scenario",
-              "file": "saucedemo/checkout.spec.ts",
-              "line": 269,
-              "column": 10,
-              "specs": [
+              "title": "should get carts for a specific user",
+              "ok": true,
+              "tags": [],
+              "tests": [
                 {
-                  "title": "should purchase multiple products",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
                     {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "saucedemo-chromium",
-                      "projectName": "saucedemo-chromium",
-                      "results": [
+                      "workerIndex": 73,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 595,
+                      "errors": [],
+                      "stdout": [
                         {
-                          "workerIndex": 31,
-                          "parallelIndex": 0,
-                          "status": "passed",
-                          "duration": 918,
-                          "errors": [],
-                          "stdout": [],
-                          "stderr": [],
-                          "retry": 0,
-                          "startTime": "2026-08-02T05:47:19.660Z",
-                          "annotations": [],
-                          "attachments": []
+                          "text": "✓ Retrieved 2 carts for user 1\n"
+                        },
+                        {
+                          "text": "✓ First cart date: 2020-03-02T00:00:00.000Z\n"
+                        },
+                        {
+                          "text": "✓ Products in first cart: \u001b[33m3\u001b[39m\n"
                         }
                       ],
-                      "status": "expected"
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-11T16:42:20.812Z",
+                      "annotations": [],
+                      "attachments": []
                     }
                   ],
-                  "id": "ed12acc0108d051d6837-f09d88aa649447d7516b",
-                  "file": "saucedemo/checkout.spec.ts",
-                  "line": 282,
-                  "column": 13
+                  "status": "expected"
                 }
-              ]
+              ],
+              "id": "0d5dd9e117172cdb7551-623846a1d3d833d63f67",
+              "file": "api/fakestoreapi.spec.ts",
+              "line": 336,
+              "column": 9
             }
           ]
         }
@@ -163,8 +186,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-08-02T05:47:19.204Z",
-    "duration": 1722.7649999856949,
+    "startTime": "2026-08-11T16:42:20.112Z",
+    "duration": 1326.4679999351501,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,

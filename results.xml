@@ -1,6 +1,12 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="1.7227649999856949">
-<testsuite name="saucedemo/checkout.spec.ts" timestamp="2026-08-02T05:47:19.437Z" hostname="saucedemo-chromium" tests="1" failures="0" skipped="0" time="0.918" errors="0">
-<testcase name="SauceDemo Checkout Tests › End-to-End Scenario › should purchase multiple products" classname="saucedemo/checkout.spec.ts" time="0.918">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="1.32646799993515">
+<testsuite name="api/fakestoreapi.spec.ts" timestamp="2026-08-11T16:42:20.596Z" hostname="api" tests="1" failures="0" skipped="0" time="0.595" errors="0">
+<testcase name="FakeStoreAPI - User Tests › should get carts for a specific user" classname="api/fakestoreapi.spec.ts" time="0.595">
+<system-out>
+<![CDATA[✓ Retrieved 2 carts for user 1
+✓ First cart date: 2020-03-02T00:00:00.000Z
+✓ Products in first cart: [33m3[39m
+]]>
+</system-out>
 </testcase>
 </testsuite>
 </testsuites>

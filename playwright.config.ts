@@ -28,8 +28,8 @@ export default defineConfig({
 
     ['html'],
     ['list'],
-    ['json', {outputFile: 'test-result.json'}],
-    ['junit', {outputFile: 'results.xml'}]
+    ['json', { outputFile: 'test-result.json' }],
+    ['junit', { outputFile: 'results.xml' }]
   ],
 
   // Global test timeout
@@ -39,7 +39,7 @@ export default defineConfig({
   expect: {
     timeout: 5000 //5 seconds
   },
- 
+
   // Shared settings for all projects
   use: {
     // Base URL - change based on which site you're testing
@@ -55,34 +55,43 @@ export default defineConfig({
     video: 'retain-on-failure',
 
     // Browser viewport
-    viewport: {width: 1280, height: 720},
+    viewport: { width: 1280, height: 720 },
 
     // Action timeout
     actionTimeout: 10 * 1000, // 10 seconds
 
     // Navigation timeout
     navigationTimeout: 30 * 1000, //30 seconds
-    
+
   },
 
   // Configure projects for major browsers 
   projects: [
     {
-      name: 'saucedemo-chromium',
-      use: { ...devices['Desktop Chrome'],
+      name: 'api',
+      testMatch: /.*api.*\.spec\.ts/
+    },
+
+    {
+      name: 'chromium',
+      use: {
+        ...devices['Desktop Chrome'],
         baseURL: 'https://www.saucedemo.com'
-       },
-       testMatch: /saucedemo.*\.spec.ts/,
+      },
+      testIgnore: /.*api.*\.spec\.ts/,
+      testMatch: /saucedemo.*\.spec.ts/
     },
 
     {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
+      testIgnore: /.*api.*\.spec\.ts/
     },
 
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
+      testIgnore: /.*api.*\.spec\.ts/
     },
 
     // Test against mobile viewports.

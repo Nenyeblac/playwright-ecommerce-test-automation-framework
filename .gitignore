@@ -10,9 +10,15 @@ build/
 # Coverage
 Coverage/
 
-# Environment
+# Environment variables
 .env
-.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Keep the environment template in version control
+!.env.example
 
 # Playwright
 /test-results/
@@ -20,6 +26,10 @@ Coverage/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+
+# Playwright reporter output
+test-result.json
+results.xml
 
 # Logs
 *.log

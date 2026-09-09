@@ -9,7 +9,7 @@
     "test:ui": "playwright test --ui",
     "test:chromium": "playwright test --project=chromium",
     "test:webkit": "playwright test --project=webkit",
-    "test:mobile": "playwright test --project='Mobile Chrome'",
+    "test:firefox": "playwright test --project=firefox",
     "test:saucedemo": "playwright test tests/saucedemo/ --headed",
     "test:parallel": "playwright test --workers=4",
     "test:serial": "playwright test --workers=1",

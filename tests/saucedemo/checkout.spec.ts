@@ -231,8 +231,7 @@ test.describe('SauceDemo Checkout Tests', () => {
         });
 
         test('should verify item count', async ({ page }) => {
-            const items = await page.locator('.cart_item').all();
-            expect(items.length).toBe(1);
+            await expect(page.getByRole('button', { name: /^View details for / })).toHaveCount(1);
         });
 
     });
@@ -297,8 +296,7 @@ test.describe('SauceDemo Checkout Tests', () => {
             );
             await checkoutPage.clickContinueButton();
 
-            const items = await page.locator('.cart_item').all();
-            expect(items.length).toBe(2);
+            await expect(page.getByRole('button', { name: /^View details for / })).toHaveCount(2);
             await checkoutPage.clickFinishButton();
             await expect(checkoutPage.completeHeader).toBeVisible();
         });

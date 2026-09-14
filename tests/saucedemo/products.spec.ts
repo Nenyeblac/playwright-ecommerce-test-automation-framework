@@ -19,6 +19,7 @@ test.describe('Saucedemo Products Tests', () => {
             SauceDemoUsers.Valid_Users.standard.username,
             SauceDemoUsers.Valid_Users.standard.password
         );
+        await expect(productsPage.inventoryItems.first()).toBeVisible();
     });
 
     //Product Display Verification
@@ -39,6 +40,7 @@ test.describe('Saucedemo Products Tests', () => {
         test('should display page title', async () => {
             await expect(productsPage.pageTitle).toBeVisible();
             await expect(productsPage.pageTitle).toHaveText('Products');
+            //await expect(productsPage.pageTitle).toHaveText('Products', { timeout: 15_000 });
         });
 
         test('should have visible product container', async () => {
@@ -72,27 +74,30 @@ test.describe('Saucedemo Products Tests', () => {
 
         test('should sort products from A to Z', async () => {
             await productsPage.sortBy('az');
-            const names = await productsPage.getAllProductNames();
-            const sortedNames = [...names].sort();
-            expect(names).toEqual(sortedNames);
+            await expect(productsPage.sortDropdown).toHaveValue('az');
+            await expect.poll(async () => {
+                const names = await productsPage.getAllProductNames();
+                return names.join('|') === [...names].sort().join('|');
+            }).toBe(true);
         });
 
         test('should sort products from Z to A', async () => {
             await productsPage.sortBy('za');
-            const names = await productsPage.getAllProductNames();
-            const sortedNames = [...names].sort().reverse();
-            expect(names).toEqual(sortedNames);
+            await expect.poll(async () => {
+                const names = await productsPage.getAllProductNames();
+                return names.join('|') === [...names].sort().reverse().join('|');
+            }).toBe(true);
         });
 
         test('should sort price from low to high', async () => {
             await productsPage.sortBy('lohi');
-            const names = await productsPage.getAllProductNames();
-            expect(names[0]).toBe(TestData.PRODUCTS.ONESIE.name);
+            await expect(productsPage.inventoryItems.first().locator('.inventory_item_name'))
+                .toHaveText(TestData.PRODUCTS.ONESIE.name);
         });
         test('should sort price from high to low', async () => {
             await productsPage.sortBy('hilo');
-            const names = await productsPage.getAllProductNames();
-            expect(names[0]).toBe(TestData.PRODUCTS.FLEECE_JACKET.name);
+            await expect(productsPage.inventoryItems.first().locator('.inventory_item_name'))
+                .toHaveText(TestData.PRODUCTS.FLEECE_JACKET.name);
         });
 
     });
@@ -114,8 +119,7 @@ test.describe('Saucedemo Products Tests', () => {
         });
 
         test('should add item to cart by index', async () => {
-            const products = await productsPage.inventoryItems.all();
-            await products[0].locator('button:has-text("Add to Cart")').click();
+            await productsPage.addProductToCartByIndex(0);
             const cartCount = await productsPage.getCartItemCount();
             expect(cartCount).toBe(1);
         });

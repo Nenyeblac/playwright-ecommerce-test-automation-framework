@@ -12,12 +12,11 @@ export class LoginPage {
     constructor(page: Page) {
         this.page = page;
 
-        // Locators based on SauceDemo locator by attribute
-        this.usernameInput = page.locator('[data-test="username"]');
-        this.passWordInput = page.locator('[data-test="password"]');
-        this.loginButton = page.locator('[data-test="login-button"]');
-        this.errorMessage = page.locator('[data-test="error"]');
-        this.errorButton = page.locator('[data-test="error-button"]');
+        this.usernameInput = page.getByPlaceholder('Username');
+        this.passWordInput = page.getByPlaceholder('Password');
+        this.loginButton = page.getByRole('button', { name: 'Login' });
+        this.errorMessage = page.getByRole('alert');
+        this.errorButton = this.errorMessage.getByRole('button', { name: 'Dismiss error' });
     }
 
     // Navigate to the login page

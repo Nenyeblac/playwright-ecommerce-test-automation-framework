@@ -252,8 +252,7 @@ test.describe('SauceDemo Cart Tests', () => {
             await productsPage.addProductToCartByName(TestData.PRODUCTS.BIKE_LIGHT.name);
             await productsPage.goToCart();
 
-            const descriptions = await page.locator('.inventory_item_desc').all();
-            expect(descriptions.length).toBe(2);
+            await expect(cartPage.cartItems.locator('.inventory_item_desc')).toHaveCount(2);
         });
     });
 

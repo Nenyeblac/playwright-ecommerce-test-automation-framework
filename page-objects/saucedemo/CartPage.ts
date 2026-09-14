@@ -12,10 +12,10 @@ export class CartPage {
    constructor(page: Page) {
 
       this.page = page;
-      this.pageTitle = page.locator('.title');
+      this.pageTitle = page.getByText('Your Cart', { exact: true });
       this.cartItems = page.locator('.cart_item');
-      this.checkoutButton = page.locator('#checkout');
-      this.continueShoppingButton = page.locator('#continue-shopping');
+      this.checkoutButton = page.getByRole('button', { name: 'Checkout' });
+      this.continueShoppingButton = page.getByRole('button', { name: 'Continue Shopping' });
    }
 
    async goto() {
@@ -23,24 +23,26 @@ export class CartPage {
    }
 
    async getCartItemCount(): Promise<number> {
+      await this.continueShoppingButton.waitFor();
       return await this.cartItems.count();
    }
 
    async getCartItemNames(): Promise<string[]> {
+      await this.continueShoppingButton.waitFor();
       const items = await this.cartItems.all();
       const names: string[] = [];
 
       for (const item of items) {
-         const name = await item.locator('.inventory_item_name').textContent();
-         if (name) names.push(name);
+         const label = await item.getByRole('button', { name: /^View details for / }).getAttribute('aria-label');
+         if (label) names.push(label.replace(/^View details for /, ''));
       }
 
       return names;
    }
 
    async removeItemByName(productName: string) {
-      const item = this.page.locator('.cart_item', { hasText: productName });
-      await item.locator('button:has-text("Remove")').click();
+      const item = this.cartItems.filter({ has: this.page.getByRole('button', { name: `View details for ${productName}` }) });
+      await item.getByRole('button', { name: 'Remove' }).click();
    }
 
    async clickCheckout() {
@@ -58,13 +60,14 @@ export class CartPage {
    }
 
    async isItemInCart(productName: string): Promise<boolean> {
-      const item = this.page.locator('.cart_item', { hasText: productName });
+      await this.continueShoppingButton.waitFor();
+      const item = this.cartItems.filter({ has: this.page.getByRole('button', { name: `View details for ${productName}` }) });
       return await item.isVisible();
    }
 
    async getCartItemDetails(productName: string) {
-      const item = this.page.locator('.cart_item', { hasText: productName });
-      const name = item.locator('.inventory_item_name').textContent() || '';
+      const item = this.cartItems.filter({ has: this.page.getByRole('button', { name: `View details for ${productName}` }) });
+      const name = await item.getByRole('button', { name: `View details for ${productName}` }).textContent() || '';
       const quantity = parseInt(await item.locator('.cart_quantity').textContent() || '0');
       return { name, quantity };
    }

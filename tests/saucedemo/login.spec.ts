@@ -7,10 +7,10 @@ test.describe('SauceDemo Login Tests', () => {
     let loginPage: LoginPage;
     let productsPage: ProductsPage;
 
-    test.beforeEach(async({page}) => {
-         loginPage = new LoginPage(page);
-         productsPage = new ProductsPage(page);
-        
+    test.beforeEach(async ({ page }) => {
+        loginPage = new LoginPage(page);
+        productsPage = new ProductsPage(page);
+
         await loginPage.goto();
         await expect(page).toHaveURL('https://www.saucedemo.com/');
     });
@@ -18,23 +18,23 @@ test.describe('SauceDemo Login Tests', () => {
     // Valid Login scenarios
     test.describe('Valid Login Scenarios', () => {
 
-        test('should log in with standard user', async({page}) => {
+        test('should log in with standard user', async ({ page }) => {
             await loginPage.login(
-                SauceDemoUsers.Valid_Users.standard.username, 
+                SauceDemoUsers.Valid_Users.standard.username,
                 SauceDemoUsers.Valid_Users.standard.password);
             await expect(page).toHaveURL(/.*inventory.html/);
             await expect(productsPage.pageTitle).toHaveText('Products');
         });
 
-        test('should login with performance glitch user', async({page}) => {
+        test('should login with performance glitch user', async ({ page }) => {
             await loginPage.login(
-                SauceDemoUsers.Valid_Users.performance.username, 
+                SauceDemoUsers.Valid_Users.performance.username,
                 SauceDemoUsers.Valid_Users.performance.password);
             await expect(page).toHaveURL(/.*inventory.html/);
-            await expect(productsPage.pageTitle).toHaveText('Products');
+            await expect(productsPage.pageTitle).toHaveText('Products', { timeout: 15_000 });
         });
 
-        test('should login with problem user', async({page}) => {
+        test('should login with problem user', async ({ page }) => {
             await loginPage.login(
                 SauceDemoUsers.Valid_Users.problem.username,
                 SauceDemoUsers.Valid_Users.problem.password
@@ -43,15 +43,15 @@ test.describe('SauceDemo Login Tests', () => {
             await expect(productsPage.pageTitle).toHaveText('Products');
         });
 
-        test('should login with visual user', async({page}) => {
+        test('should login with visual user', async ({ page }) => {
             await loginPage.login(
-                SauceDemoUsers.Valid_Users.visual.username, 
+                SauceDemoUsers.Valid_Users.visual.username,
                 SauceDemoUsers.Valid_Users.visual.password);
             await expect(page).toHaveURL(/.*inventory.html/);
             await expect(productsPage.pageTitle).toHaveText('Products');
         });
 
-        test('should login with error user', async({page}) => {
+        test('should login with error user', async ({ page }) => {
             await loginPage.login(
                 SauceDemoUsers.Valid_Users.error.username,
                 SauceDemoUsers.Valid_Users.error.password
@@ -65,15 +65,15 @@ test.describe('SauceDemo Login Tests', () => {
     // Invalid Credentials Handling
     test.describe('Invalid Credentials Handling', () => {
 
-        test('should show error for locked out user', async() => {
+        test('should show error for locked out user', async () => {
             await loginPage.login(
-                SauceDemoUsers.Invalid_Users.locked.username, 
+                SauceDemoUsers.Invalid_Users.locked.username,
                 SauceDemoUsers.Invalid_Users.locked.password);
             await expect(loginPage.errorMessage).toBeVisible();
             await expect(loginPage.errorMessage).toContainText('Sorry, this user has been locked out');
         });
 
-        test('should show error for invalid username', async() => {
+        test('should show error for invalid username', async () => {
             await loginPage.login(
                 SauceDemoUsers.Invalid_Users.invalid_username.username,
                 SauceDemoUsers.Invalid_Users.invalid_username.password
@@ -83,7 +83,7 @@ test.describe('SauceDemo Login Tests', () => {
             expect(errorText).toContain('Username and password do not match');
         });
 
-        test('should show error for invalid password', async() => {
+        test('should show error for invalid password', async () => {
             await loginPage.login(
                 SauceDemoUsers.Invalid_Users.invalid_password.username,
                 SauceDemoUsers.Invalid_Users.invalid_password.password
@@ -93,29 +93,29 @@ test.describe('SauceDemo Login Tests', () => {
             expect(errorText).toContain('Username and password do not match')
         });
 
-        test('should handle wrong username format', async() => {
+        test('should handle wrong username format', async () => {
             await loginPage.login('standard@domain.com', 'secret_sauce');
             await expect(loginPage.errorMessage).toBeVisible();
         });
 
-        test('should reject login attempt with SQL injection payload', async() => {
+        test('should reject login attempt with SQL injection payload', async () => {
             await loginPage.login("admin' OR '1'='1", "admin' OR '1'='1");
             await expect(loginPage.errorMessage).toBeVisible;
             await expect(loginPage.errorMessage).toContainText('Username and password do not match');
         });
 
-        test('should reject login attempt with XSS payload', async() => {
+        test('should reject login attempt with XSS payload', async () => {
             await loginPage.login('<script>alert("XSS")</script>', 'secret_sauce');
             await expect(loginPage.errorMessage).toBeVisible;
             await expect(loginPage.errorMessage).toContainText('Username and password do not match');
         });
 
-        test('should not execute XSS payload on login', async({ page }) => {
-        let dialogAppeared = false;
+        test('should not execute XSS payload on login', async ({ page }) => {
+            let dialogAppeared = false;
 
             page.on('dialog', async dialog => {
-            dialogAppeared = true;
-            await dialog.dismiss();
+                dialogAppeared = true;
+                await dialog.dismiss();
             });
 
             await loginPage.login('<script>alert("XSS")</script>', 'secret_sauce');
@@ -124,7 +124,7 @@ test.describe('SauceDemo Login Tests', () => {
             expect(dialogAppeared).toBe(false);
         });
 
-        test('should be case sensitive', async() => {
+        test('should be case sensitive', async () => {
             await loginPage.login('STANDARD_USER', 'secret_sauce');
             await expect(loginPage.errorMessage).toBeVisible;
         });
@@ -134,7 +134,7 @@ test.describe('SauceDemo Login Tests', () => {
     // Empty Field Validation
     test.describe('Empty Field Validation', () => {
 
-        test('should show error for empty username', async() => {
+        test('should show error for empty username', async () => {
             await loginPage.login(
                 SauceDemoUsers.Invalid_Users.empty_username.username,
                 SauceDemoUsers.Invalid_Users.empty_username.password
@@ -144,7 +144,7 @@ test.describe('SauceDemo Login Tests', () => {
             expect(errorText).toContain('Username is required');
         });
 
-        test('should show error for empty password', async() => {
+        test('should show error for empty password', async () => {
             await loginPage.login(
                 SauceDemoUsers.Invalid_Users.empty_password.username,
                 SauceDemoUsers.Invalid_Users.empty_password.password

@@ -16,15 +16,15 @@ export class CheckoutPage {
     constructor(page: Page) {
 
         this.page = page;
-        this.firstNameInput = page.locator('#first-name');
-        this.lastNameInput = page.locator('#last-name');
-        this.postCodeInput = page.locator('#postal-code');
-        this.continueButton = page.locator('#continue');
-        this.finishButton = page.locator('#finish');
-        this.completeHeader = page.locator('.complete-header');
-        this.completeText = page.locator('.complete-text');
-        this.backHomeButton = page.locator('#back-to-products');
-        this.errorMessage = page.locator('[data-test="error"]');
+        this.firstNameInput = page.getByPlaceholder('First Name');
+        this.lastNameInput = page.getByPlaceholder('Last Name');
+        this.postCodeInput = page.getByPlaceholder('Zip/Postal Code');
+        this.continueButton = page.getByRole('button', { name: 'Continue' });
+        this.finishButton = page.getByRole('button', { name: 'Finish' });
+        this.completeHeader = page.getByRole('heading', { name: 'Thank you for your order!' });
+        this.completeText = page.getByText('Your order has been dispatched, and will arrive just as fast as the pony can get there!');
+        this.backHomeButton = page.getByRole('button', { name: 'Back Home' });
+        this.errorMessage = page.getByRole('alert');
 
     }
 

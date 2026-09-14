@@ -15,14 +15,14 @@ export class ProductsPage {
     constructor(page: Page) {
         this.page = page;
 
-        this.pageTitle = page.locator('.title');
+        this.pageTitle = page.getByText('Products', { exact: true });
         this.inventoryContainer = page.locator('.inventory_container');
         this.inventoryItems = page.locator('.inventory_item');
-        this.shoppingCartBadge = page.locator('.shopping_cart_container');
-        this.shoppingCartLink = page.locator('.shopping_cart_link');
-        this.sortDropdown = page.locator('.product_sort_container');
-        this.burgerMenu = page.locator('#react-burger-menu-btn');
-        this.logoutLink = page.locator('#logout_sidebar_link');
+        this.shoppingCartBadge = page.getByRole('button', { name: /^Cart,/ });
+        this.shoppingCartLink = this.shoppingCartBadge;
+        this.sortDropdown = page.getByRole('combobox');
+        this.burgerMenu = page.getByRole('button', { name: 'Open Menu' });
+        this.logoutLink = page.getByRole('button', { name: 'Logout' });
     }
 
     // Navigate directly to products page
@@ -73,19 +73,19 @@ export class ProductsPage {
 
     // Add product to cart by name
     async addProductToCartByName(productName: string) {
-        const product = this.page.locator('.inventory_item', { hasText: productName });
-        await product.locator('button:has-text("Add to cart")').click();
+        const product = this.inventoryItems.filter({ has: this.page.getByRole('button', { name: `View details for ${productName}` }) });
+        await product.getByRole('button', { name: 'Add to cart' }).click();
     }
 
     // Add product to cart by index
     async addProductToCartByIndex(index: number) {
-        await this.inventoryItems.nth(index).locator('button').click();
+        await this.inventoryItems.nth(index).getByRole('button', { name: 'Add to cart' }).click();
     }
 
     // Remove product from cart by name
     async removeProductFromCart(productName: string) {
-        const product = this.page.locator('.inventory_item', { hasText: productName });
-        await product.locator('button:has-text("Remove")').click();
+        const product = this.inventoryItems.filter({ has: this.page.getByRole('button', { name: `View details for ${productName}` }) });
+        await product.getByRole('button', { name: 'Remove' }).click();
     }
 
     // Shopping cart item count
@@ -104,9 +104,7 @@ export class ProductsPage {
 
     // Sort products
     async sortBy(option: 'az' | 'za' | 'lohi' | 'hilo') {
-        await this.sortDropdown.waitFor({ state: 'visible', timeout: 1000 });
         await this.sortDropdown.selectOption(option);
-        await this.page.waitForTimeout(1500);
     }
 
     // Get product details by name
@@ -122,14 +120,13 @@ export class ProductsPage {
 
     // Check if inventory is in cart (button should show "Remove")
     async isProductInCart(productName: string): Promise<boolean> {
-        const product = this.page.locator('.inventory_item', { hasText: productName });
-        const buttonText = await product.locator('button').textContent();
-        return buttonText === 'Remove';
+        const product = this.inventoryItems.filter({ has: this.page.getByRole('button', { name: `View details for ${productName}` }) });
+        return await product.getByRole('button', { name: 'Remove' }).isVisible();
     }
 
     // Click on product name to view details
     async clickProductName(productName: string) {
-        await this.page.locator('inventory_item_name', { hasText: productName }).click();
+        await this.page.getByRole('button', { name: `View details for ${productName}` }).click();
     }
 
     // Logout

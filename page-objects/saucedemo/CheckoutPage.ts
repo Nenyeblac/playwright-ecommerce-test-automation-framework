@@ -1,8 +1,8 @@
 import { Page, Locator } from '@playwright/test';
+import { BasePage } from '../BasePage';
 
-export class CheckoutPage {
+export class CheckoutPage extends BasePage {
 
-    readonly page: Page;
     readonly firstNameInput: Locator;
     readonly lastNameInput: Locator;
     readonly postCodeInput: Locator;
@@ -13,18 +13,18 @@ export class CheckoutPage {
     readonly backHomeButton: Locator;
     readonly errorMessage: Locator;
 
-    constructor(page: Page) {
+    constructor(page: Page, baseUrl?: string) {
 
-        this.page = page;
-        this.firstNameInput = page.getByPlaceholder('First Name');
-        this.lastNameInput = page.getByPlaceholder('Last Name');
-        this.postCodeInput = page.getByPlaceholder('Zip/Postal Code');
-        this.continueButton = page.getByRole('button', { name: 'Continue' });
-        this.finishButton = page.getByRole('button', { name: 'Finish' });
-        this.completeHeader = page.getByRole('heading', { name: 'Thank you for your order!' });
-        this.completeText = page.getByText('Your order has been dispatched, and will arrive just as fast as the pony can get there!');
-        this.backHomeButton = page.getByRole('button', { name: 'Back Home' });
-        this.errorMessage = page.getByRole('alert');
+        super(page, baseUrl);
+        this.firstNameInput = this.page.getByPlaceholder('First Name');
+        this.lastNameInput = this.page.getByPlaceholder('Last Name');
+        this.postCodeInput = this.page.getByPlaceholder('Zip/Postal Code');
+        this.continueButton = this.page.getByRole('button', { name: 'Continue' });
+        this.finishButton = this.page.getByRole('button', { name: 'Finish' });
+        this.completeHeader = this.page.getByRole('heading', { name: 'Thank you for your order!' });
+        this.completeText = this.page.getByText('Your order has been dispatched, and will arrive just as fast as the pony can get there!');
+        this.backHomeButton = this.page.getByRole('button', { name: 'Back Home' });
+        this.errorMessage = this.page.getByRole('alert');
 
     }
 

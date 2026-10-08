@@ -1,27 +1,27 @@
 import { Page, Locator } from '@playwright/test';
+import { BasePage } from '../BasePage';
 
 // Login Page Object - Represents the SauceDemo login page
-export class LoginPage {
-    readonly page: Page;
+export class LoginPage extends BasePage {
     readonly usernameInput: Locator;
     readonly passWordInput: Locator;
     readonly loginButton: Locator;
     readonly errorMessage: Locator;
     readonly errorButton: Locator;
 
-    constructor(page: Page) {
-        this.page = page;
+    constructor(page: Page, baseUrl?: string) {
+        super(page, baseUrl);
 
-        this.usernameInput = page.getByPlaceholder('Username');
-        this.passWordInput = page.getByPlaceholder('Password');
-        this.loginButton = page.getByRole('button', { name: 'Login' });
-        this.errorMessage = page.getByRole('alert');
+        this.usernameInput = this.page.getByPlaceholder('Username');
+        this.passWordInput = this.page.getByPlaceholder('Password');
+        this.loginButton = this.page.getByRole('button', { name: 'Login' });
+        this.errorMessage = this.page.getByRole('alert');
         this.errorButton = this.errorMessage.getByRole('button', { name: 'Dismiss error' });
     }
 
     // Navigate to the login page
-    async goto() {
-        await this.page.goto('https://www.saucedemo.com/');
+    async goto(): Promise<void> {
+        await super.goto('/');
     }
 
     async login(username: string, password: string) {

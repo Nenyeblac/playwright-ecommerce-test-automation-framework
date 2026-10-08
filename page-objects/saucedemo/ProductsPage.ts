@@ -1,8 +1,8 @@
 import { Page, Locator } from "@playwright/test";
+import { BasePage } from "../BasePage";
 
 // Products Page Object - Represents the SauceDemo inventory/products page
-export class ProductsPage {
-    readonly page: Page;
+export class ProductsPage extends BasePage {
     readonly pageTitle: Locator;
     readonly inventoryContainer: Locator;
     readonly inventoryItems: Locator;
@@ -12,22 +12,22 @@ export class ProductsPage {
     readonly burgerMenu: Locator;
     readonly logoutLink: Locator;
 
-    constructor(page: Page) {
-        this.page = page;
+    constructor(page: Page, baseUrl?: string) {
+        super(page, baseUrl);
 
-        this.pageTitle = page.getByText('Products', { exact: true });
-        this.inventoryContainer = page.locator('.inventory_container');
-        this.inventoryItems = page.locator('.inventory_item');
-        this.shoppingCartBadge = page.getByRole('button', { name: /^Cart,/ });
+        this.pageTitle = this.page.getByText('Products', { exact: true });
+        this.inventoryContainer = this.page.locator('.inventory_container');
+        this.inventoryItems = this.page.locator('.inventory_item');
+        this.shoppingCartBadge = this.page.getByRole('button', { name: /^Cart,/ });
         this.shoppingCartLink = this.shoppingCartBadge;
-        this.sortDropdown = page.getByRole('combobox');
-        this.burgerMenu = page.getByRole('button', { name: 'Open Menu' });
-        this.logoutLink = page.getByRole('button', { name: 'Logout' });
+        this.sortDropdown = this.page.getByRole('combobox');
+        this.burgerMenu = this.page.getByRole('button', { name: 'Open Menu' });
+        this.logoutLink = this.page.getByRole('button', { name: 'Logout' });
     }
 
     // Navigate directly to products page
-    async goto() {
-        await this.page.goto('https://www.saucedemo.com/inventory.html');
+    async goto(): Promise<void> {
+        await super.goto('/inventory.html');
     }
 
     // Get page title text

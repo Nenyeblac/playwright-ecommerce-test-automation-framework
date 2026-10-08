@@ -152,7 +152,7 @@ playwright-ecommerce-test-framework/
 | **`.github/workflows/`** | Contains the GitHub Actions workflow used for continuous integration and automated test execution. |
 | **`page-objects/`** | Contains Page Object Model classes that separate page interactions and locators from test logic. |
 | **`page-objects/saucedemo/`** | Contains page objects specific to the SauceDemo application. |
-| **`BasePage.ts`** | Placeholder for shared base page functionality as the framework evolves. |
+| **`page-objects/BasePage.ts`** | Shared page foundation inherited by the SauceDemo page objects for base-URL navigation and common locator interactions. |
 | **`test-data/`** | Contains reusable test data used by automated tests. |
 | **`tests/api/`** | Contains API test specifications. |
 | **`tests/saucedemo/`** | Contains automated UI tests for the SauceDemo application. |
